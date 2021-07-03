@@ -49,6 +49,7 @@ public class BeerOrderAllocationListener {
         });
 
         if (sendResponse) {
+        System.out.println("Sending allocate order response message");
             jmsTemplate.convertAndSend(JmsConfig.ALLOCATE_ORDER_RESPONSE_QUEUE,
                     AllocateOrderResult.builder()
                             .beerOrderDto(request.getBeerOrderDto())
